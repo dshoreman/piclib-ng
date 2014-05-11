@@ -28,8 +28,20 @@
 					</ul>
 					<h3 class="nav nav-header">Albums</h3>
 					<ul class="nav nav-sidebar">
-						<li ng-repeat="album in albums"><a href="#">{{ album.name }}</a></li>
+						<li ng-repeat="album in albums | filter:albumSearch">
+							<a href="#">{{ album.name }}</a>
+						</li>
 					</ul>
+
+					<div class="toolbox">
+						<div class="form-group has-icon">
+							<span class="glyphicon glyphicon-search"></span>
+							<input placeholder="Search albums"
+								class="form-control input-sm"
+							    ng-model="albumSearch"
+							/>
+						</div>
+					</div>
 				</div>
 				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 					<h1 class="page-header">Dashboard</h1>
