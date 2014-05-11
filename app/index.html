@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +20,7 @@
 			</div>
 		</div>
 
-		<div class="container-fluid">
+		<div class="container-fluid" ng-controller="galleryCtrl">
 			<div class="row">
 				<div class="col-sm-3 col-md-2 sidebar">
 					<ul class="nav nav-sidebar">
@@ -28,9 +28,7 @@
 					</ul>
 					<h3 class="nav nav-header">Albums</h3>
 					<ul class="nav nav-sidebar">
-						<li><a href="#">Baby's First Footsteps</a></li>
-						<li><a href="#">Fun Times in Finland</a></li>
-						<li><a href="#">Laravel in le Dam</a></li>
+						<li ng-repeat="album in albums"><a href="#">{{ album.name }}</a></li>
 					</ul>
 				</div>
 				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -41,5 +39,6 @@
 		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+		<script src="js/controllers/gallery.js"></script>
 	</body>
 </html>
