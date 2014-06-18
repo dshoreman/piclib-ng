@@ -1,0 +1,14 @@
+<h1 class="page-header">
+	{{ album.name }}<br>
+	<small> >> {{ image.name }}</small>
+</h1>
+<img ng-src="{{ image.url }}" class="col-xs-8" />
+<div class="row">
+	<p class="lead">{{ image.description }}</p>
+	<div class="col-xs-2"
+		 ng-repeat="image in album.images">
+		<a class="thumbnail" ui-sref="albumImage({albumId: albums.indexOf(album), imageId: album.images.indexOf(image)})">
+			<img ng-src="{{ image.url }}" width="250" />
+		</a>
+	</div>
+</div>
